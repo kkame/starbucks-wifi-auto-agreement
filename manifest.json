@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "Korea Starbucks Wifi Auto Agreement",
+  "description": "스타벅스 와이파이 이용약관에 자동동의 처리해줍니다.",
+  "version": "0.0.1",
+
+  "browser_action": {
+    "default_icon": "images/logo.png",
+    "default_popup": "html/popup.html"
+  },
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "permissions": [
+    "tabs",
+    "<all_urls>"
+  ]
+}
