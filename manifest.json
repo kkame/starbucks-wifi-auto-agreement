@@ -3,17 +3,24 @@
 
   "name": "Korea Starbucks Wifi Auto Agreement",
   "description": "스타벅스 와이파이 이용약관에 자동동의 후 기존 페이지로 이동합니다.",
-  "version": "0.0.2",
+  "version": "0.0.3",
 
   "browser_action": {
     "default_icon": "images/logo.png",
     "default_popup": "html/popup.html"
   },
-  "background": {
-    "scripts": ["js/background.js"]
+  "icons": {
+    "48": "images/logo.png"
   },
   "permissions": [
     "tabs",
-    "<all_urls>"
+    "*://*.first.wifi.olleh.com/*",
+    "*://*.istarbucks.co.kr/util/wireless.do"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.first.wifi.olleh.com/*","*://*.istarbucks.co.kr/util/wireless.do"],
+      "js": ["js/background.js"]
+    }
   ]
 }
